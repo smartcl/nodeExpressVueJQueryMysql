@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "async": "^2.6.2",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.4",
+    "debug": "^4.1.1",
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "morgan": "^1.9.1",
+    "mysql2": "^1.6.5",
+    "q": "^1.5.1"
+  }
+}

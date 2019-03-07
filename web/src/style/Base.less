@@ -1,0 +1,355 @@
+/**
+ *  基础样式
+ */
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+// 宽度和高度决定了元素的边框盒
+.rdc-box-sizing(){
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+// 边框圆角
+.rdc-border-radius(@radius: 6px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+
+// 图片等比例缩放
+.rdc-img-proportion-zoom {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+// 重写的按钮样式
+.el-button {
+    .rdc-border-radius(2px);
+    height: 36px;
+    padding: 0px 20px;
+    margin: 0px 10px;
+    color: #464974;
+
+    i:before {
+        position: relative;
+        top: 1px;
+    }
+
+    &:hover {
+        color: #464974;
+    }
+}
+
+// 文本按钮
+.el-button--text {
+    color:#4e74f0;
+}
+
+.el-button.is-disabled {
+
+    i:before {
+        color: #b4bccc;
+        position: relative;
+        top: 1px;
+    }
+
+    &:hover {
+        color: #b4bccc;
+    }
+}
+
+.el-button [class*=icon-]+span {
+    margin-left: 10px;
+}
+
+.el-button:first-of-type {
+    margin: 0px 10px 0 0;
+}
+
+.el-button--primary {
+    background: #508dff;
+    border-color: #508dff;
+    height: 36px;
+    padding: 0px 20px;
+    color: #fff;
+
+    &:hover {
+        color: #fff!important;
+        background: #61a8ff;
+        border-color: #61a8ff;
+    }
+
+    &:active {
+        color: #fff!important;
+        background: #508dff;
+        border-color: #508dff;
+    }
+}
+
+.el-button--danger {
+    color: #fff;
+
+    i:before {
+        color: #fff;
+    }
+
+    &:hover {
+        color: #fff;
+    }
+}
+
+.el-button--danger.is-disabled {
+
+    i:before {
+        color: #fff;
+    }
+
+    &:hover {
+        color: #fff;
+    }
+}
+
+.el-button--mini.el-button--primary, .el-button--small.el-button--primary {
+    background: #508dff;
+    border-color: #508dff;
+    height: auto;
+    padding: 9px 15px;
+    color: #fff;
+
+    &:hover {
+        background: #61a8ff;
+        border-color: #61a8ff;
+    }
+
+    &:active {
+        background: #508dff;
+        border-color: #508dff;
+    }
+}
+
+.el-button--mini.el-button, .el-button--small.el-button {
+    height: auto;
+    padding: 9px 15px;
+}
+
+.el-button.el-button--primary.is-loading {
+    margin-left: 0!important;
+}
+
+// 重写input文本框样式
+.el-input {
+    .el-input__inner {
+        .rdc-border-radius(2px);
+        height: 36px;
+    }
+}
+
+// 重写搜索框内按钮样式
+.el-input-group__append {
+    .el-button {
+        margin: -20px;
+    }
+}
+
+// 重写table的th样式
+.el-table {
+    overflow: auto!important;
+
+    th {
+        background-color: #eee;
+    }
+
+    .el-table__header-wrapper {
+        background: #eeeeee;
+        height: 44px;
+
+        .el-table__header {
+
+            tr {
+                color: #333333;
+                font-size: 14px;
+                background: #eeeeee;
+
+                th {
+                    padding: 10px 0;
+                    font-weight: initial;
+                }
+            }
+        }
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .el-table__row {
+
+        td {
+            padding: 2px 0;
+            height: 46px;
+
+            .el-button+.el-button {
+                margin-left: 0!important;
+            }
+
+            .el-button--medium {
+                color: #4e74f0!important;
+                padding: 0 20px 0 0!important;
+                margin-right: 0;
+            }
+
+            img {
+                .rdc-border-radius(6px);
+                width: 33px;
+                height: 33px;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    tr.el-table__row--striped {
+        td {
+            background: #f9fafc!important;
+        }
+    }
+}
+.el-table::before {
+    height: 0px;
+}
+
+// 重写from的样式
+.el-form {
+
+    .el-form-item {
+        display: -webkit-flex;
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+
+        .el-form-item__label {
+            font-size: 14px;
+            color: #666666;
+            line-height: 1;
+        }
+
+        .el-form-item__content {
+            line-height: 1;
+            margin-left: 0!important;
+        }
+    }
+
+}
+
+// 重写tab的样式
+.el-tabs--border-card {
+    box-shadow: none!important;
+    border: 0px solid #dcdfe6;
+
+    .el-tabs__header {
+        background-color: #f5f5f6;
+
+        .el-tabs__item {
+            height: 34px;
+            line-height: 34px;
+            margin: 0;
+        }
+
+        .el-tabs__item.is-active {
+            color: #333;
+            border-top: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            border-left: 1px solid #ddd;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+
+        .el-tabs__item:hover {
+            color: #333;
+        }
+    }
+
+    .el-tabs__content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #fff;
+        top: 34px;
+        padding: 0;
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        overflow-y: auto;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+    }
+}
+
+// 重写dialog样式
+.el-dialog {
+    .el-dialog__header {
+        .el-dialog__title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #464974;
+            line-height: 16px;
+        }
+    }
+}
+
+// 重写轮播图样式
+.el-carousel {
+
+    .el-carousel__button {
+        /*background-color: red;*/
+    }
+}
+
+// 重写下拉样式
+.el-dropdown-menu {
+    li {
+        padding: 0 35px;
+    }
+}
+
+// 重写滑块样式
+.el-tooltip__popper {
+    z-index: 99999999999!important;
+}
+
+// 重写下拉列表样式
+.el-select-dropdown {
+    z-index: 99999999999!important;
+}
+
+// 重写颜色选择器样式
+.el-color-dropdown {
+    z-index: 999999999999!important;
+}
+
+// 重写消息提示样式
+.el-massage {
+    z-index: 99999999!important;
+}
+
+// 重写上传组件样式
+.el-upload-list {
+    .el-upload-list__item {
+        .el-icon-close {
+            display: none!important;
+        }
+    }
+}
+
+
+
+
